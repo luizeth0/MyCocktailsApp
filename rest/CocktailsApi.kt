@@ -9,7 +9,7 @@ interface CocktailsApi {
 
     @GET(PATH)
     suspend fun getCocktails(
-        @Query("?s") name: String,
+        @Query("a") a: String = "Alcoholic"
     ): Response<CocktailResponse>
 
 
@@ -19,8 +19,8 @@ interface CocktailsApi {
         // S = BY NAMe
         // F = FIRST LETTER
         // I = INGREDIENT NAME
-        const val BASE_URL = "https://www.thecocktaildb.com/"
-        private const val PATH = "api/json/v1/1/search.php?"
+        const val BASE_URL = "http://www.thecocktaildb.com/api/json/v1/1/"
+        private const val PATH = "filter.php"
     }
 
 }
